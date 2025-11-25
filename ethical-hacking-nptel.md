@@ -174,7 +174,7 @@ TCP/IP 4-layer model:
 
 ---
 
-### ⭐ TCP (Transmission Control Protocol) (pg. 61)
+### TCP (Transmission Control Protocol) (pg. 61)
 
 * Connection-oriented
 * Reliable
@@ -218,11 +218,11 @@ Example (TFTP):
 
 ---
 
-# ⭐ WEEK-2 — IMPORTANT POINTS (Highly Exam-Relevant)
+# WEEK-2
 
 ---
 
-##  LECTURE 6 — IP Fragmentation & MTU
+##  Lecture 6 — IP Fragmentation & MTU
 
 ### 1. MTU (Maximum Transmission Unit)
 
@@ -263,7 +263,7 @@ Example (TFTP):
 
 ---
 
-##  LECTURE 7 — IP Addressing & Classes
+##  Lecture 7 — IP Addressing & Classes
 
 ### 6. IP address basics
 
@@ -317,7 +317,7 @@ Example (TFTP):
 
 ---
 
-##  LECTURE 8 — TCP, UDP & Ports
+##  Lecture 8 — TCP, UDP & Ports
 
 ### 14. TCP (Transmission Control Protocol)
 
@@ -358,9 +358,9 @@ Defines a unique TCP/UDP connection:
 
 ---
 
-##  LECTURE 9 — TCP Header, 3-Way Handshake, UDP Header
+##  Lecture 9 — TCP Header, 3-Way Handshake, UDP Header
 
-### 18. TCP Header Fields
+### 18. TCP Header Fields (20-60 bytes header)
 
 * Source port, destination port
 * Sequence number
@@ -391,7 +391,7 @@ Defines a unique TCP/UDP connection:
 * Attackers flood server with SYN packets, never send ACK.
 * Server’s connection table fills up → SYN Flood Attack.
 
-### 22. UDP Header
+### 22. UDP Header (8 byte header)
 
 * Source port
 * Destination port
@@ -400,7 +400,7 @@ Defines a unique TCP/UDP connection:
 
 ---
 
-##  LECTURE 10 — Subnetting, VLSM, CIDR
+##  Lecture 10 — Subnetting, VLSM, CIDR
 
 ### 23. Subnetting
 
@@ -466,53 +466,37 @@ Defines a unique TCP/UDP connection:
 
 ---
 
-# ⭐ WEEK-3 — IMPORTANT POINTS (Highly Exam-Relevant)
+# WEEK-3
 
 ---
 
-##  LECTURE 11 — Packet Delivery & Routing Methods
+##  Lecture 11 — Packet Delivery & Routing Methods
 
 ### 1. Two Internet Packet Delivery Types
 
 * Direct Delivery – sender & receiver in same network
 * Indirect Delivery – packet passes through 1 or more routers
-  *(PDF pg. 3–4)*
-
----
 
 ### 2. Two Connection Options (Network Layer)
 
 * Connection-oriented: route is established first
 * Connection-less: each packet is independent (IP uses this)
-  *(PDF pg. 2)*
-
----
 
 ### 3. Four Routing Methods
 
-*(PDF pg. 4–6)*
-
 | Method                       | Key Idea                      | Notes                      |
 | ---------------------------- | ----------------------------- | -------------------------- |
-| Next-hop routing         | Router stores *only next hop* | Saves memory               |
-| Network-specific routing | Route stored per network  | Widely used                |
-| Host-specific routing    | Route per host            | Large tables, rarely used  |
-| Default routing          | Use default when no match     | Used in home routers, ISPs |
-
----
+| Next-hop routing             | Router stores *only next hop* | Saves memory               |
+| Network-specific routing     | Route stored per network      | Widely used                |
+| Host-specific routing        | Route per host                | Large tables, rarely used  |
+| Default routing              | Use default when no match     | Used in home routers, ISPs |
 
 ### 4. Routing Table Types
-
-*(PDF pg. 6)*
 
 * Static – manually added, never changes
 * Dynamic – automatically updated using routing protocols (RIP/OSPF/BGP)
 
----
-
 ### 5. Routing Table Fields
-
-*(PDF pg. 7)*
 
 * Subnet mask
 * Destination
@@ -527,24 +511,16 @@ Defines a unique TCP/UDP connection:
 
 ---
 
-##  LECTURE 12 — RIP & OSPF
+##  Lecture 12 — RIP & OSPF
 
----
-
-### ⭐ 6. Autonomous System (AS)
-
-*(PDF pg. 11)*
+### 6. Autonomous System (AS)
 
 * Group of routers under one administrative control
 * Uses one *interior* protocol inside → RIP/OSPF
 * Uses *exterior* protocol to communicate with other AS → BGP
 * Each AS has a unique AS number
 
----
-
-### ⭐ 7. Classes of Routing Protocols
-
-*(PDF pg. 10)*
+### 7. Classes of Routing Protocols
 
 #### Interior (within AS)
 
@@ -555,11 +531,7 @@ Defines a unique TCP/UDP connection:
 
 * BGP
 
----
-
-### ⭐ 8. RIP — Routing Information Protocol
-
-*(PDF pg. 12–13)*
+### 8. RIP — Routing Information Protocol
 
 #### RIP uses:
 
@@ -576,11 +548,7 @@ Defines a unique TCP/UDP connection:
 * Slow response to failures
 * Consumes bandwidth
 
----
-
-### ⭐ 9. OSPF — Open Shortest Path First
-
-*(PDF pg. 13–15)*
+### 9. OSPF — Open Shortest Path First
 
 #### Characteristics:
 
@@ -603,9 +571,7 @@ Defines a unique TCP/UDP connection:
 
 ---
 
-##  LECTURE 13 — BGP (Border Gateway Protocol)
-
-*(PDF pg. 18–22)*
+##  Lecture 13 — BGP (Border Gateway Protocol)
 
 ###  10. What is BGP?
 
@@ -620,22 +586,14 @@ Defines a unique TCP/UDP connection:
 * Initially exchanges full table
 * Later only incremental updates
 
----
-
 ###  11. BGP Message Types
-
-*(PDF pg. 20)*
 
 1. OPEN – establish connection
 2. UPDATE – advertise/withdraw routes
 3. KEEPALIVE – maintain peer connection
 4. NOTIFICATION – report errors
 
----
-
 ###  12. BGP Functional Procedures
-
-*(PDF pg. 21)*
 
 * Neighbor Acquisition – establish peer relation
 * Neighbor Reachability – ensure peers are alive
@@ -643,9 +601,7 @@ Defines a unique TCP/UDP connection:
 
 ---
 
-##  LECTURE 14 — IPv6
-
-*(PDF pg. 25–34)*
+##  Lectrue 14 — IPv6
 
 ###  13. Why IPv6?
 
@@ -659,8 +615,6 @@ Defines a unique TCP/UDP connection:
 
 ###  14. Key Features of IPv6
 
-*(PDF pg. 26–28)*
-
 * 128-bit address space
 * Simplified 40-byte base header
 * Uses extension headers for optional data
@@ -668,11 +622,7 @@ Defines a unique TCP/UDP connection:
 * Supports anycast addressing
 * More flexible addressing & routing
 
----
-
 ###  15. IPv6 Header Fields
-
-*(PDF pg. 28)*
 
 * Version = 6
 * Priority
@@ -683,21 +633,13 @@ Defines a unique TCP/UDP connection:
 * Source (128-bit)
 * Destination (128-bit)
 
----
-
 ###  16. IPv6 Address Types
-
-*(PDF pg. 31)*
 
 * Unicast – one device
 * Multicast – group of devices
 * Anycast – nearest device among a group
 
----
-
 ###  17. IPv6 Notation
-
-*(PDF pg. 31)*
 
 * Colon-hexadecimal format
 * Leading zeros can be compressed
@@ -713,24 +655,18 @@ Example:
 
 ###  18. IPv6 Transition Mechanisms
 
-*(PDF pg. 34)*
-
 1. Dual Stack – IPv4 + IPv6 both supported
 2. Tunneling – IPv6 packet inside IPv4
 3. Header Translation – IPv4 ↔ IPv6 conversion
 
 ---
 
-##  LECTURE 15 — Routing Examples
-
-This lecture teaches:
+##  Lecture 15 — Routing Examples
 
 ###  19. Longest Prefix Match Rule
 
 * Router selects the most specific subnet mask
 * e.g., /26 is preferred over /24 for same address
-
----
 
 ###  20. How to determine output interface
 
@@ -741,11 +677,7 @@ You check:
 3. Choose the entry with largest number of matching bits
 4. If none match → use default route
 
----
-
 ###  21. Practice includes:
-
-*(PDF pg. 36–39)*
 
 * Matching destination to correct subnet
 * Using tables with overlapping masks
@@ -771,63 +703,40 @@ You check:
 
 ---
 
-#  WEEK-4 — IMPORTANT POINTS (Highly MCQ-Focused)
-
----
+#  WEEK-4
 
 ##  LECTURE 16 — LAB SETUP & VIRTUAL ENVIRONMENT
 
 ### 1. Hacking real systems is illegal
 
-*(PDF pg. 2)*
 Practice only on virtual machines.
 
----
-
 ### 2. Hypervisor (Virtual Machine Monitor)
-
-*(PDF pg. 3)*
 
 * Software that creates & runs multiple VMs
 * Shares memory, CPU, disk, network of host
 * Examples: VirtualBox, VMware
 * Course uses VirtualBox
 
----
-
 ### 3. Kali Linux
-
-*(PDF pg. 3)*
 
 * Debian-based penetration testing OS
 * Contains 1000+ security tools: Nmap, Metasploit, Burp Suite
 * Best OS for beginners in hacking labs
 
----
-
 ### 4. Victim Machines
-
-*(PDF pg. 4)*
 
 * Metasploitable 2 → vulnerable Linux
 * Metasploitable 3 → vulnerable Windows
 * Windows XP / Windows 7 can also be used
 
----
-
 ### 5. VirtualBox Network Modes
-
-*(PDF pg. 4)*
 
 * NAT → VM is isolated; gets virtual IP; only internet access
 * Bridged Adapter (recommended) → VM gets IP from router;
   Attacker ↔ Victim ↔ Host communication possible
 
----
-
 ### 6. System Requirements
-
-*(PDF pg. 5)*
 
 * Min 4 GB RAM
 * 30–40 GB storage
@@ -835,13 +744,10 @@ Practice only on virtual machines.
 
 ---
 
-##  LECTURE 17 — PASSIVE INFORMATION GATHERING
-
----
+##  Lecture 17 — PASSIVE INFORMATION GATHERING
 
 ### 7. Reconnaissance = First Stage of Hacking
 
-*(PDF pg. 7)*
 Collect as much info as possible about:
 
 * Target network
@@ -850,41 +756,27 @@ Collect as much info as possible about:
 
 Used to identify possible attack vectors.
 
----
-
 ### 8. Objectives of Reconnaissance
-
-*(PDF pg. 8)*
 
 * Network info: IP, domain, services
 * System info: usernames, routing table, architecture
 * Organization info: employees, policies, contact info
 
----
-
 ### 9. Two Types of Reconnaissance
-
-*(PDF pg. 8)*
 
 * Passive → No direct contact; safe
 * Active → Direct queries; more detail but detectable
 
----
 
-# ⭐ Passive Reconnaissance Tools
+### Passive Reconnaissance Tools
 
 ### 10. archive.org (Wayback Machine)
-
-*(PDF pg. 9)*
 
 * Provides historical website versions
 * Reveals directories, hidden pages, exposed files
 
----
-
 ### 11. Whois Lookup
 
-*(PDF pg. 10)*
 Reveals:
 
 * Owner name
@@ -897,7 +789,6 @@ Reveals:
 
 ### 12. Netcraft
 
-*(PDF pg. 10)*
 Shows:
 
 * Subdomains
@@ -909,8 +800,6 @@ Shows:
 
 ### 13. Search Engines + Search Operators
 
-*(PDF pg. 11–12)*
-
 * `site:` — search inside specific domain
 * `cache:` — find cached pages
 * `intitle:` — find title keyword
@@ -921,13 +810,9 @@ Shows:
 
 ---
 
-##  LECTURE 18 — ACTIVE INFORMATION GATHERING
-
----
+##  Lecture 18 — ACTIVE INFORMATION GATHERING
 
 ### 14. Active Recon = Direct Interaction
-
-*(PDF pg. 15)*
 
 * More accurate, but risk of detection
 * Tools: Nmap, dig, nslookup, Nessus, Metasploit
@@ -936,17 +821,12 @@ Shows:
 
 ### 15. DNS & Mail Server Enumeration
 
-*(PDF pg. 15)*
-
 * Find DNS servers & DNS records
 * Identify mail servers (MX) → reveals users, IPs, computers
 * Tools: `nslookup`, `host`, `dig`
 
----
-
 ### 16. Scanning (Nmap)
 
-*(PDF pg. 16)*
 Used to detect:
 
 * Live hosts
@@ -955,43 +835,27 @@ Used to detect:
 * OS version
 * Vulnerabilities
 
----
-
-# ⭐ Nmap Host Discovery Techniques
+### Nmap Host Discovery Techniques
 
 ### 17. ICMP Echo Sweep (Ping Sweep)
-
-*(PDF pg. 17)*
 
 * Sends ICMP type 8 → expects type 0 reply
 * Option: `-PE`
 * Easy but blocked often
 
----
-
 ### 18. Broadcast ICMP Sweep
-
-*(PDF pg. 18)*
 
 * Sends request to broadcast address
 * All hosts reply
 * Fast but often blocked
 
----
-
 ### 19. Non-Echo ICMP Sweep
-
-*(PDF pg. 19)*
 
 * Type 13 (Timestamp) → `-PP`
 * Type 17 (Address Mask) → `-PM`
 * Good alternative when ping is blocked
 
----
-
 ### 20. TCP SYN/ACK Sweep
-
-*(PDF pg. 20)*
 
 * Detect live hosts using TCP packets
 * Options:
@@ -1004,8 +868,6 @@ Used to detect:
 
 ### 21. UDP Sweep
 
-*(PDF pg. 21)*
-
 * Sends UDP datagram
 * If ICMP Port Unreachable received → host down
 * If no reply → host alive
@@ -1014,13 +876,10 @@ Used to detect:
 
 ---
 
-##  LECTURE 19 — PORT SCANNING USING NMAP
-
----
+##  Lecture 19 — PORT SCANNING USING NMAP
 
 ### 22. Port Scanning Purpose
 
-*(PDF pg. 23)*
 To find which ports are:
 
 * OPEN
@@ -1029,31 +888,20 @@ To find which ports are:
 
 Important because open ports = entry points.
 
----
-
 ### 23. TCP Connect Scan
-
-*(PDF pg. 24)*
 
 * Completes 3-way handshake
 * Easy to detect
   Command: `-sT`
 
----
-
 ### 24. TCP SYN Scan (Half-Open Scan)
-
-*(PDF pg. 25)*
 
 * Sends SYN → receives SYN/ACK → sends RST
 * Most common, stealthy
   Command: `-sS`
 
----
-
 ### 25. TCP Stealth Scans
 
-*(PDF pg. 26)*
 Uses unusual flags:
 
 * FIN
@@ -1065,11 +913,7 @@ Rules:
 * Open port → no response
 * Closed port → RST/ACK
 
----
-
 ### 26. FTP Bounce Scan
-
-*(PDF pg. 27)*
 
 * Abuses FTP server to scan other systems
 * Very slow
@@ -1077,13 +921,10 @@ Rules:
 
 ---
 
-##  LECTURE 20 — OTHER FEATURES OF NMAP
-
----
+##  Lecture 20 — OTHER FEATURES OF NMAP
 
 ### 27. Service & Version Detection
 
-*(PDF pg. 29)*
 Command:
 
 ```
@@ -1099,7 +940,6 @@ Identifies:
 
 ### 28. OS Detection
 
-*(PDF pg. 29–30)*
 Uses TCP/IP fingerprinting
 Command:
 
@@ -1114,11 +954,7 @@ Uses factors like:
 * ACK behavior
 * ICMP quoting behavior
 
----
-
 ### 29. Important Nmap Discovery Options
-
-*(PDF pg. 31)*
 
 * `-sL` → list targets
 * `-sP` / `-sn` → ping scan
@@ -1127,22 +963,15 @@ Uses factors like:
 * `-n` → skip DNS
 * `-sU` → UDP scan
 
----
-
 ### 30. Important Port Scan Options
-
-*(PDF pg. 32)*
 
 * `-sN`, `-sF`, `-sX` → Null / FIN / Xmas
 * `-p` → specify port
 * `-F` → fast scan
 * `--top-ports <n>` → most common n ports
 
----
-
 ### 31. Countermeasures Against Reconnaissance
 
-*(PDF pg. 33–34)*
 Organizations can prevent recon by:
 
 * Do not publish sensitive info
@@ -1156,7 +985,7 @@ Organizations can prevent recon by:
 
 ---
 
-# ⭐ SUPER QUICK REVISION (CHEAT-SHEET)
+## ⭐ SUPER QUICK REVISION (CHEAT-SHEET)
 
 * Use VirtualBox Bridge Mode for hacking labs
 * Reconnaissance = info gathering → *first step* of hacking
@@ -1168,10 +997,6 @@ Organizations can prevent recon by:
 * Connect scan = `-sT`, SYN scan = `-sS`, Stealth scan = `-sN/sF/sX`
 * Version detection = `-sV`, OS detection = `-O`
 * Protect organization: disable listing, restrict DNS, remove sensitive info
-
----
-
-Here are your One-Page Revision Notes for Week-5 — clean, exam-ready, and easy to revise in 5 minutes.
 
 ---
 
@@ -1336,7 +1161,7 @@ HTTP, Telnet, Rlogin, POP, IMAP, SMTP, FTP.
 
 ---
 
-# ⭐ WEEK-6 — ONE PAGE REVISION NOTES (CRYPTOGRAPHY)
+# WEEK-6
 
 ---
 
@@ -1500,7 +1325,7 @@ Used in banking, API calls, secure messaging, etc.
 
 ---
 
-# ⭐ WEEK-7 — ONE PAGE REVISION NOTES (CRYPTOGRAPHIC HASHES, SIGNATURES, SSL/TLS, SSH, IPSEC)
+# WEEK-7
 
 ---
 
