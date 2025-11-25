@@ -2210,3 +2210,182 @@ Vulnerability in client-side JavaScript; payload never touches server.
 * XSS protection = input validation + output encoding + cookie security.
 
 ---
+
+# WEEK-12 
+
+*(NMAP Host Discovery • NMAP Port Scanning • NMAP Service/OS Detection • NSE Scripts • Wireshark)*
+
+---
+
+# 1. NMAP Host Discovery (Ping Scans)
+
+*(Which hosts are alive?)*
+
+### ICMP Scans
+
+* -PE → ICMP Echo Request
+* -PP → ICMP Timestamp
+* -PM → ICMP Netmask
+  ✘ Many networks block ICMP → unreliable.
+
+### TCP-Based Discovery
+
+* -PS → TCP SYN ping
+* -PA → TCP ACK ping
+  ✔ Works even if ICMP blocked
+  ✘ Firewalls may spoof responses.
+
+### UDP Discovery
+
+* -PU → UDP ping
+  ✘ Very unreliable (UDP often filtered).
+
+### Other Options
+
+* -sn → Ping sweep (formerly -sP)
+* -sL → List scan (no packets sent)
+* -PN → Treat all hosts as online (skip ping)
+* -n/-R → DNS resolution control
+
+---
+
+# 2. NMAP Port Scanning
+
+### TCP Connect Scan (-sT)
+
+* Full 3-way handshake
+  ✔ Works everywhere
+  ✘ No stealth (logged easily)
+
+### TCP SYN Scan (-sS)
+
+* Half-open (SYN → SYN/ACK → RST)
+  ✔ Fast & stealthy
+  ✔ Most popular scan
+  ✘ Requires root/administrator
+
+### Stealth Scans (RFC 793)
+
+* Null scan (no flags)
+* FIN scan
+* Xmas scan (FIN+URG+PSH)
+  ✔ Very stealthy
+  ✘ Windows always replies RST → ineffective
+
+### FTP Bounce Scan (-b)
+
+Uses FTP server to relay packets.
+✔ Hides attacker
+✘ Rarely works today
+
+### Useful Options
+
+* `-p22` or `-p1-1000` → specific ports
+* `-F` → fast scan
+* `--top-ports N` → scan most common N ports
+* `-sO` → IP protocol scan
+
+---
+
+# 3. NMAP Service / Version / OS Detection
+
+### Service/Version Detection (-sV)
+
+Finds:
+
+* Service name (http, ssh…)
+* Version (Apache 2.4.x…)
+* App fingerprint
+  Intensity: 0–9 (`--version-all` = 9)
+
+### OS Detection (-O)
+
+Uses:
+
+* TCP/IP stack behavior
+* TTL, window size
+* Flags
+* ICMP responses
+  Extra options:
+* `--osscan-limit`
+* `--osscan-guess`
+
+---
+
+# 4. NMAP Scripting Engine (NSE)
+
+Automated scripts for:
+
+* Vulnerabilities
+* Brute forcing
+* Malware scanning
+* HTTP/S services
+* SMB, DNS, FTP attacks
+
+### Usage
+
+```
+nmap --script <script-name> <target>
+```
+
+### Important Script Categories
+
+* `vuln` → general vulnerabilities
+* `http-*` → HTTP checks
+* `smb-brute` → SMB password attacks
+* `malware` → malware fingerprinting
+
+---
+
+# 5. Wireshark: Network Analysis
+
+### What Wireshark Does
+
+* Packet capture
+* Protocol breakdown
+* Forensics & troubleshooting
+* Works in promiscuous mode
+
+### Wireshark Display Windows
+
+* Packet list (source, destination, protocol)
+* Protocol tree
+* Hex/ASCII view
+
+### Filters
+
+* `http`
+* `tcp.port == 80`
+* `ip.addr == X.X.X.X`
+  Valid filter → green, invalid → red.
+
+### Important Wireshark Menus
+
+* Analyze → enable/disable protocols, follow TCP streams
+* Statistics → protocol hierarchy, conversations, endpoints
+* Capture → select interfaces, start/stop capture
+
+### What Can Be Captured
+
+* HTTP credentials (plaintext)
+* Session cookies
+* TCP handshakes
+* Malformed packets
+* DNS queries/responses
+
+### What Cannot Be Seen
+
+* Encrypted HTTPS payload (only handshake visible)
+
+---
+
+# ⭐ SUPER-QUICK LAST-MINUTE SUMMARY
+
+* Host Discovery: ICMP (-PE), SYN (-PS), ACK (-PA), UDP (-PU).
+* Port Scanning: SYN (-sS) best; Connect (-sT) noisy; Xmas/FIN/Null stealthy.
+* Service Detection: -sV → app/version fingerprinting.
+* OS Detection: -O → TCP/IP behavior analysis.
+* NSE Scripts: automate vulnerability scans (`--script vuln`).
+* Wireshark: sniff packets in promiscuous mode; filter & analyze protocols.
+
+---
