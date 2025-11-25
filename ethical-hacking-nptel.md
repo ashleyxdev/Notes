@@ -1534,7 +1534,7 @@ Supports:
 
 ---
 
-# ⭐ WEEK-8 — ONE PAGE REVISION NOTES
+# ⭐ WEEK-8
 
 *(Steganography • Biometrics • Network Attacks • DNS Security • Email Security)*
 
@@ -1559,9 +1559,11 @@ Unlike cryptography, the goal is no suspicion.
 
   * Modify last bit of each pixel
   * Easy but fragile
+
 * Masking & Filtering
 
   * Modify brightness/contrast in noisy regions
+
 * Algorithmic/JPEG DCT
 
   * Embed bits into DCT coefficients (stronger)
@@ -1704,7 +1706,7 @@ Uses combination of:
 
 ---
 
-# ⭐ WEEK-9 — ONE PAGE REVISION NOTES
+# ⭐ WEEK-9 
 
 *(Sniffing • Wireshark • Ettercap • BurpSuite • Social Engineering • DoS/DDoS)*
 
@@ -1862,7 +1864,7 @@ Goal: make service unavailable.
 
 ---
 
-# ⭐ WEEK-10 — ONE PAGE REVISION NOTES
+# ⭐ WEEK-10
 
 *(Hardware Security • Side-Channel Attacks • Timing • Power Analysis • PUF • Hardware Trojans)*
 
@@ -2030,7 +2032,7 @@ Malicious modification of IC during design or fabrication.
 
 ---
 
-# ⭐ WEEK-11 — ONE PAGE REVISION NOTES
+# ⭐ WEEK-11
 
 *(Metasploit • SQL Injection • SQLMAP • XSS)*
 
